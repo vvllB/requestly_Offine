@@ -30,10 +30,11 @@ jobs:
     - run: npm install -D webpack-cli
     - run: npm install -D raw-loader
     - run: npm install -D @types/chrome
+    - run: npm install -D node-sass@npm:dart-sass
     - run: sh install.sh local
     - run: sh build.sh
 
     - uses: actions/upload-artifact@v4
       with:
-        name: my-artifact
+        name: mv3-dist
         path: browser-extension/mv3/dist/ # or path/to/artifact
