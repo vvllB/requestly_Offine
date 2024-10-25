@@ -1,0 +1,38 @@
+name: NodeJS with Webpack
+
+on:
+  workflow_dispatch:
+
+jobs:
+  pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        
+    - name: Build
+      run: | 
+        npm install ts-loader --save-dev
+        npm install -D webpack-cli
+        npm install raw-loader --save-dev
+        npm install @types/chrome --save-dev
+        sh install.sh local
+        sh build.sh local
+        zip -r mv3.zip browser-extension/mv3/dist/
+        zip -r app.zip app/build/
+
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "v24.9.25"
+        files: |
+          app.zip
+          mv3.zip
