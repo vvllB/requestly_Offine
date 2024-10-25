@@ -31,7 +31,7 @@ jobs:
         npm install -D webpack-cli
         npm install -D raw-loader
         npm install -D @types/chrome
-        npm install -D rollup@latest
+        npm install -D rollup@5.3.1
     - run: sh install.sh local
     - run: sh build.sh
 
