@@ -30,6 +30,7 @@ jobs:
     - run: npm install -D webpack-cli
     - run: npm install -D raw-loader
     - run: npm install -D @types/chrome
+    - run: npm install -D rollup-plugin-sass
     - run: sh install.sh local
     - run: sh build.sh
 
@@ -37,7 +38,7 @@ jobs:
       uses: actions/download-artifact@v4.1.8
       with:
         # Name of the artifact to download. If unspecified, all artifacts for the run are downloaded.
-        name: mv3 # optional
+        #name: # optional
         # Destination path. Supports basic tilde expansion. Defaults to $GITHUB_WORKSPACE
         path: browser-extension/mv3/dist # optional
         # A glob pattern matching the artifacts that should be downloaded. Ignored if name is specified.
