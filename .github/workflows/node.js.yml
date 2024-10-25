@@ -28,5 +28,6 @@ jobs:
         cache: 'npm'
     - run: npm install -D ts-loader
     - run: npm install -D webpack-cli
+    - run: npm install -D raw-loader
     - run: sh install.sh local
     - run: sh build.sh
