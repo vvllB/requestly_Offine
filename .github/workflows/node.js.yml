@@ -30,7 +30,7 @@ jobs:
     - run: npm install -D webpack-cli
     - run: npm install -D raw-loader
     - run: npm install -D @types/chrome
-    - run: npm install -D rollup@latest
+    
     - run: sh install.sh local
     - run: sh build.sh
 
