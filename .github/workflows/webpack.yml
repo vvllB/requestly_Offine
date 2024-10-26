@@ -24,7 +24,7 @@ jobs:
         
     - name: Build
       run: | 
-        npm cache clean
+        npm cache clean --force
         npm update
         npm install ts-loader --save-dev
         npm install -D webpack-cli
