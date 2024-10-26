@@ -3,11 +3,11 @@
 export GENERATE_SOURCEMAP=false
 export CI=false
 
-env=$1
-if [[ -z $1 ]]; then
-    echo -e "No environment specified. Continuing with 'local'"
+#env=$1
+#if [[ -z $1 ]]; then
+#    echo -e "No environment specified. Continuing with 'local'"
     env="local"
-fi
+#fi
 
 # Build script for all components
 echo -e "\n***** Cleaning public directory *****"
