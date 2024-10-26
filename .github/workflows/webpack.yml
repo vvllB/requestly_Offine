@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [16.15.0]
 
     steps:
     - uses: actions/checkout@v4
@@ -21,13 +21,17 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-
+        
     - name: Build
-      run: |
-        sh install.sh local
-        sh build.sh
+    - run: sh install.sh local
+    - run: sh build.sh
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: mv3-dist
+        path: browser-extension/mv3/dist/ # or path/to/artifact
         
     - uses: actions/upload-artifact@v4
       with:
-        name: my-artifact
-        path: browser-extension/mv3/dist/ # or path/to/artifact
+        name: app-dist
+        path: app/build/ # or path/to/artifact
