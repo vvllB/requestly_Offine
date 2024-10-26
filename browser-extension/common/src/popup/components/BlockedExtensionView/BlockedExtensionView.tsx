@@ -1,6 +1,6 @@
 import React from "react";
 import BlockedExtension from "../../../../resources/icons/blockedExtension.svg";
-import "./BlockedExtensionView.scss";
+import "BlockedExtensionView.scss";
 import { Button } from "antd";
 import config from "../../../config";
 
