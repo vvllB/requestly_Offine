@@ -28,7 +28,7 @@ jobs:
         npm install -D webpack-cli
         npm install raw-loader --save-dev
         npm install @types/chrome --save-dev
-        npm install sass-loader@8.0.2 sass@1.26.5  --save-dev
+        npm install sass@1.72.0  --save-dev
         sh install.sh local
         sh build.sh
 #        npm install
