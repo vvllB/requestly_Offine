@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [16.15.0]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -26,10 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install -D ts-loader
-    - run: npm install -D webpack-cli
-    - run: npm install -D raw-loader
-    - run: npm install -D @types/chrome
+    #- run: npm install -D ts-loader
+    #- run: npm install -D webpack-cli
+    #- run: npm install -D raw-loader
+    #- run: npm install -D @types/chrome
     - run: sh install.sh local
     - run: sh build.sh
 
