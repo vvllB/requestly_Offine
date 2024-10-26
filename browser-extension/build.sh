@@ -12,7 +12,6 @@ cd ../../browser-extension
 
 echo -e "\n***** Building common code *****"
 cd common
-npm install sass-loader --save-dev
 npm run build
 cd ..
 
