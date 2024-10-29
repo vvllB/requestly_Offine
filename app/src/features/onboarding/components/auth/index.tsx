@@ -58,7 +58,11 @@ export const AuthScreen: React.FC<Props> = ({
       trackAppOnboardingStepCompleted(ONBOARDING_STEPS.AUTH);
     }
   }, [user.loggedIn, dispatch, isOnboarding]);
-
+  if (true) {
+    return (
+      <div></div>
+    );
+  }
   return (
     <div className={`onboarding-auth-screen-wrapper ${onboardingVariation === "variant3" ? "variant3" : ""}`}>
       {email && isVerifyEmailPopupVisible ? (
