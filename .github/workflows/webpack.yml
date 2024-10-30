@@ -34,5 +34,5 @@ jobs:
         prerelease: true
         title: "v24.9.25"
         files: |
-          app-dist.zip
-          mv3-dist.zip
+          app.zip
+          mv3.zip
