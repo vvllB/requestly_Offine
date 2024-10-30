@@ -1,3 +1,22 @@
+使用方法
+1. 下载release, app.zip, mv3.zip
+2. 使用nginx代理app文件夹
+```
+server {
+  listen       3000;
+  server_name  localhost;
+  location / {
+    root xxxxxx/app/;
+    index  index.html;
+    try_files $uri $uri/ /index.html;
+  }
+}
+```
+3. chrome浏览器 -> 拓展设置 -〉 开发者模式 -〉 加载已解压的拓展 -> mv3
+
+
+
+
 <p align="center">
   <a rel="noreferrer noopener" href="https://requestly.com/">
     <picture>
