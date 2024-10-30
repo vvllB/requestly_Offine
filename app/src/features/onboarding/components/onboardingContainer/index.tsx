@@ -75,7 +75,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ isOpen }) => {
 
   return (
     <Modal
-      open={isOpen}
+      open={false}
       footer={null}
       width="100%"
       className="onboarding-modal"
